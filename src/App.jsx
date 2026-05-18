@@ -24,6 +24,8 @@ import { Mail, ExternalLink, ChevronRight, Download, MapPin } from "lucide-react
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGooglescholar } from "react-icons/si";
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const sections = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -41,7 +43,7 @@ const journey = [
     subtitle: "King Abdullah University of Science and Technology (KAUST)",
     text: "Selected to participate in the MenaML Winter School at KAUST with a full scholarship from Google, strengthening my exposure to advanced machine learning research and international scientific communities.",
     tags: ["deep learning", "large language models", "scientific AI"],
-    logo: "/logos/kaust.png",
+    logo: asset("logos/kaust.png"),
   },
   {
     year: "2025",
@@ -49,7 +51,7 @@ const journey = [
     subtitle: "Laboratoire d'informatique, de robotique et de microélectronique de Montpellier (LIRMM",
     text: "Attended the ARCHI Spring School to deepen my understanding of embedded architectures and hardware/software systems, directly supporting my PhD work on efficient AI deployment.",
     tags: ["embedded systems", "hardware architectures", "accelerator design"],
-    logo: "logos/lirmm.jpeg",
+    logo: asset("logos/lirmm.jpeg"),
   },
   {
     year: "2025 — Present",
@@ -57,7 +59,7 @@ const journey = [
     subtitle: "INSA Hauts-de-France &  NYU Abu Dhabi",
     text: "Started my PhD on software/hardware co-optimization through code transformation and hardware-aware Neural Architecture Search, with the goal of making AI model deployment more efficient on edge devices.",
     tags: ["edge AI", "hardware-aware NAS", "co-optimization"],
-    logo: "logos/insa.png",
+    logo: asset("logos/insa.png"),
   },
   {
     year: "2024",
@@ -65,7 +67,7 @@ const journey = [
     subtitle: "Batam State Polytechnic",
     text: "Delivered an online lecture for students in Indonesia, guiding them on how to approach AI research projects for their final-year work.",
     tags: ["teaching", "mentorship", "data mining"],
-    logo: "logos/batam.png",
+    logo: asset("logos/batam.png"),
   },
   // {
   //   year: "2025",
@@ -80,7 +82,7 @@ const journey = [
     subtitle: "AAAI, IJCNN, DAC, NeurIPS and DATE",
     text: "Contributed to the scientific community by reviewing submissions for major international conferences, developing a sharper understanding of research quality, clarity, evaluation and positioning.",
     tags: ["peer review"],
-    logo: "logos/peerreview.png",
+    logo: asset("logos/peerreview.png"),
   },
     {
     year: "2023 — 2024",
@@ -88,7 +90,7 @@ const journey = [
     subtitle: "Modern Compilers Lab · New York University Abu Dhabi (NYUAD)",
     text: "Worked on an autoscheduling module for the MLIR compiler infrastructure, and contributed to the optimization of Matlab function kernels as part of a collaboration with Mathworks.",
     tags: ["MLIR", "LLVM", "Reinforcement Learning"],
-    logo: "logos/NYUAD.png", 
+    logo: asset("logos/NYUAD.png"), 
   },
   {
     year: "2023 — 2024",
@@ -96,7 +98,7 @@ const journey = [
     subtitle: "Laboratoire d'Automatique, de Mécanique et d'Informatique Industrielle et Humaine (LAMIH)",
     text: "Reviewed literature on the combination of NAS and compiler optimization, then designed and implemented CONAS, a hardware-aware NAS framework integrating automatic code optimization through MLIR.",
     tags: ["NAS", "MLIR", "compiler optimization"],
-    logo: "logos/LAMIH.png", 
+    logo: asset("logos/LAMIH.png"), 
   },
   // {
   //   year: "2023 — 2024",
@@ -112,7 +114,7 @@ const journey = [
     subtitle: "Ecole Supérieure d'Informatique (ESI)",
     text: "Represented Notion at my university by organizing workshops and tutoring sessions, creating learning resources and supporting students in their academic organization.",
     tags: ["leadership", "tutoring", "communication"],
-    logo: "logos/notion.png",
+    logo: asset("logos/notion.png"),
   },
   {
     year: "2023 — 2024",
@@ -120,7 +122,7 @@ const journey = [
     subtitle: "School of AI Algiers",
     text: "Prepared learning materials and assignments, and presented workshops on Maths for AI, image classification and transfer learning.",
     tags: ["teaching", "mentorship", "AI", "math"],
-    logo: "logos/soai.png",
+    logo: asset("logos/soai.png"),
   },
   {
     year: "2023",
@@ -128,7 +130,7 @@ const journey = [
     subtitle: "School of AI Algiers",
     text: "Worked on analyzing and benchmarking mathematical methods to explain deep learning models for breast cancer detection, and presented the work as a research poster at AI Summit.",
     tags: ["XAI", "medical imaging", "deep learning", "scientific communication"],
-    logo: "logos/soai.png",
+    logo: asset("logos/soai.png"),
   },
   {
     year: "2023",
@@ -136,7 +138,7 @@ const journey = [
     subtitle: "IBM NSSS 2023",
     text: "Attended talks, panels and tutorials on theory and applications of neuro-symbolic AI, expanding my view of AI beyond purely data-driven approaches.",
     tags: ["neuro-symbolic AI"],
-    logo: "logos/ibm.png",
+    logo: asset("logos/ibm.png"),
   },
   {
     year: "2023",
@@ -144,7 +146,7 @@ const journey = [
     subtitle: "Laboratoire de Méthodes de Conception de Systèmes (LMCS)",
     text: "Worked on improving a metaheuristic using machine learning techniques to solve the Flowshop scheduling problem.",
     tags: ["optimization", "metaheuristics", "reinforcement learning", "scheduling"],
-    logo: "logos/lmcs.jpeg",
+    logo: asset("logos/lmcs.jpeg"),
   },
   {
     year: "2023",
@@ -152,7 +154,7 @@ const journey = [
     subtitle: "Women Techmakers Algiers",
     text: "Participated in the IWD’23 Hackathon by contributing to a computer vision model for classifying beehives based on their health status.",
     tags: ["hackathon", "computer vision", "teamwork", "AI for good"],
-    logo: "logos/wtm.png",
+    logo: asset("logos/wtm.png"),
   },
   {
     year: "2022",
@@ -160,7 +162,7 @@ const journey = [
     subtitle: "Centre de Développement des Technologies Avancées (CDTA)",
     text: "Designed and implemented a ProM extension to analyze interoperability issues between processes, verify conformance between event logs and process models, and support model repair.",
     tags: ["process mining", "Java", "graphs", "software plugin"],
-    logo: "logos/cdta.jpeg",
+    logo: asset("logos/cdta.jpeg"),
   },
   {
     year: "2021 — 2024",
@@ -168,7 +170,7 @@ const journey = [
     subtitle: "Ecole Supérieure d'Informatique (ESI)",
     text: "Built strong foundations in machine learning, NLP, combinatorial optimization, computer architecture, HPC, distributed computing, data mining, signal/image processing and mathematics for data science.",
     tags: ["engineering", "AI", "HPC", "data science"],
-    logo: "logos/esi.png",
+    logo: asset("logos/esi.png"),
   },
   {
     year: "2021",
@@ -176,7 +178,7 @@ const journey = [
     subtitle: "National competitive exam for engineering schools in Algeria",
     text: "Completed the competitive entrance step into the engineering cycle, marking the transition from preparatory training to advanced computer science and AI studies.",
     tags: ["engineering", "transition", "competitive exam"],
-    logo: "logos/esi.png",
+    logo: asset("logos/esi.png"),
   },
   {
     year: "2019 — 2021",
@@ -184,7 +186,7 @@ const journey = [
     subtitle: "Ecole Supérieure d'Informatique (ESI)",
     text: "Developed early technical and creative skills including C/C++, Java, Shell/Bash, Figma and Adobe After Effects, while strengthening mathematical and problem-solving habits.",
     tags: ["C/C++", "Java", "Shell", "Figma", "Adobe After Effects"],
-    logo: "logos/esi.png",
+    logo: asset("logos/esi.png"),
   },
   // {
   //   year: "2016 — 2019",
