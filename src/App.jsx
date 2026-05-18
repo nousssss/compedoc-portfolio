@@ -287,7 +287,7 @@ const evidenceCards = [
     text: "Hardware-Aware Neural Architecture Search framework integrating Automatic Code Optimization through the MLIR compiler to accelerate convolutional neural networks on resource-constrained devices.",
     tags: ["NAS", "Compiler", "MLIR", "Efficient AI"],
     links: [
-    { label: "Code", url: "https://github.com/nousssss/COwNAS" },
+    { label: "Code", url: "https://github.com/nousssss/Convert-PyTorch-models-to-MLIR.git" },
   ],
   },
   {
@@ -325,7 +325,7 @@ const evidenceCards = [
     tags: ["Optimization", "RL", "Scheduling"],
     links: [
     { label: "Preprint", url: "https://drive.google.com/file/d/1Brw8frwPgFxIVyKS3g81gz6YOK651oGz/view" },
-    { label: "Code", url: "https://github.com/ilhembekkr/QTIETOIA" },
+    
   ],
   },
   {
@@ -844,13 +844,13 @@ function Contact() {
     {
       label: "LinkedIn",
       value: "Inas Bachiri",
-      href: "PUT_YOUR_LINKEDIN_LINK_HERE",
+      href: "https://www.linkedin.com/in/ines-bachiri/",
       icon: <FaLinkedin className="h-5 w-5 text-[#0A66C2]" />,
     },
     {
       label: "Google Scholar",
       value: "Inas Bachiri",
-      href: "PUT_YOUR_GOOGLE_SCHOLAR_LINK_HERE",
+      href: "https://scholar.google.com/citations?user=hrHlf7YAAAAJ&hl=en",
       icon: <BookOpen className="h-5 w-5 text-[#4285F4]" />,
     },
   ];
