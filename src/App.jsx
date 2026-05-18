@@ -267,49 +267,58 @@ const evidenceCards = [
     type: "Framework / research project",
     text: "Hardware-Aware Neural Architecture Search framework integrating Automatic Code Optimization through the MLIR compiler to accelerate convolutional neural networks on resource-constrained devices.",
     tags: ["NAS", "Compiler", "MLIR", "Efficient AI"],
+    links: [
+    { label: "Code", url: "https://github.com/nousssss/COwNAS" },
+  ],
   },
   {
     title: "Neural Architecture Search and Automatic Code Optimization",
     type: "Journal publication",
     text: "Survey paper published in Journal of Systems Architecture (Elsevier, Q1), analyzing techniques, trends and challenges at the intersection of NAS and automatic code optimization.",
     tags: ["Survey", "JSA", "Q1", "Research"],
-  },
-  {
-    title: "PhD research project",
-    type: "Doctoral research",
-    text: "Software/Hardware Co-optimisation through Code Transformation and Hardware-aware Neural Architecture Search, in a joint project between NYU Abu Dhabi and LAMIH at UPHF.",
-    tags: ["PhD", "Edge AI", "Hardware-aware NAS"],
+    links: [
+    { label: "Paper", url: "https://doi.org/10.1016/j.sysarc.2025.103645" },
+  ],
   },
   {
     title: "Interoperability Solver",
     type: "Software project / internship",
     text: "ProM process mining plugin to verify conformance between event logs and process models, repair models and annotate activities based on event messages.",
     tags: ["Process Mining", "Java", "Graphs", "Plugin"],
+    links: [
+    { label: "Code", url: "https://github.com/nousssss/Interoperability-Solver" },
+  ],
   },
   {
     title: "AI Explainability in Medical Imaging",
     type: "Research project",
     text: "Benchmarking mathematical methods to explain and interpret deep learning models for breast cancer detection.",
     tags: ["XAI", "Medical Imaging", "Deep Learning"],
+    links: [
+    { label: "Poster", url: "https://drive.google.com/file/d/1v7X1pXZkQozWkdDs5-o_rtxhw5rUVfsP/view" },
+    { label: "Code", url: "https://github.com/nousssss/RSC-XAI" },
+  ],
   },
   {
     title: "Flowshop Scheduling Optimization with AI",
     type: "Research project",
     text: "Improving a metaheuristic using machine learning techniques to solve the Flowshop scheduling problem.",
     tags: ["Optimization", "RL", "Scheduling"],
+    links: [
+    { label: "Preprint", url: "https://drive.google.com/file/d/1Brw8frwPgFxIVyKS3g81gz6YOK651oGz/view" },
+    { label: "Code", url: "https://github.com/ilhembekkr/QTIETOIA" },
+  ],
   },
   {
     title: "Community Detection in Social Networks",
     type: "Research project",
     text: "Combining combinatorial optimization and machine learning techniques to solve the community detection problem in complex networks.",
     tags: ["Graphs", "ML", "Complex Networks"],
+    links: [
+    { label: "Code", url: "https://github.com/nousssss/community-detection" },
+  ],
   },
-  {
-    title: "MenaML Winter School at KAUST",
-    type: "International school",
-    text: "Accepted to the MenaML Winter School at KAUST with a full Google scholarship and participated in the program.",
-    tags: ["MenaML", "KAUST", "Google Scholarship"],
-  },
+
 ];
 
 const floating = ["✦", "🌸", "✿", "🌸", "✿", "🌸", "✿", "🌸", "✿", "🌸", "✦", "✦", "🌸", "✿", "🌸", "✿", "🌸", "✿", "🌸", "✿", "🌸", "✦", "✦", "🌸", "✿", "🌸", "✿", "🌸", "✿", "🌸", "✿", "🌸", "✦"];
@@ -680,9 +689,21 @@ function Evidence() {
             <div className="mt-5 flex flex-wrap gap-2">
               {card.tags.map((tag) => <span key={tag} className="rounded-full bg-pink-50 px-3 py-1 text-sm font-medium text-pink-700">#{tag}</span>)}
             </div>
-            <button className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-pink-700 ring-1 ring-pink-100 transition hover:bg-pink-50">
-              Add a link <ExternalLink className="h-4 w-4" />
-            </button>
+            {card.links?.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {card.links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-pink-700 ring-1 ring-pink-100 transition hover:bg-pink-50"
+                >
+                  {link.label} <ExternalLink className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          )}
           </motion.div>
         ))}
       </div>
@@ -737,13 +758,19 @@ function Contact() {
             </p>
             <div className="mt-8 grid gap-3">
               {[
-                [Mail, "Email UPHF", "inas.bachiri@uphf.fr"],
-                [Mail, "Email NYU", "inas.bachiri@nyu.edu"],
-                [ExternalLink, "GitHub", "nouss"],
-                [ExternalLink, "LinkedIn", "Inas Bachiri"],
-                [ExternalLink, "Google Scholar", "Inas Bachiri"],
-              ].map(([Icon, label, value]) => (
-                <a key={label} href="#" className="flex items-center justify-between rounded-2xl bg-pink-50/70 p-4 font-medium text-[#6A4653] transition hover:bg-pink-100">
+                [Mail, "Email UPHF", "inas.bachiri@uphf.fr", "mailto:inas.bachiri@uphf.fr"],
+                [Mail, "Email NYU", "inas.bachiri@nyu.edu", "mailto:inas.bachiri@nyu.edu"],
+                [ExternalLink, "GitHub", "nousssss", "https://github.com/nousssss"],
+                [ExternalLink, "LinkedIn", "Inas Bachiri", "https://www.linkedin.com/in/ines-bachiri/"],
+                [ExternalLink, "Google Scholar", "Inas Bachiri", "https://scholar.google.com/citations?user=hrHlf7YAAAAJ&hl=en"],
+              ].map(([Icon, label, value, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex items-center justify-between rounded-2xl bg-pink-50/70 p-4 font-medium text-[#6A4653] transition hover:bg-pink-100"
+                >
                   <span className="flex items-center gap-3"><Icon className="h-5 w-5 text-pink-600" /> {label}: {value}</span>
                   <ChevronRight className="h-4 w-4" />
                 </a>
