@@ -41,7 +41,7 @@ const journey = [
     subtitle: "King Abdullah University of Science and Technology (KAUST)",
     text: "Selected to participate in the MenaML Winter School at KAUST with a full scholarship from Google, strengthening my exposure to advanced machine learning research and international scientific communities.",
     tags: ["deep learning", "large language models", "scientific AI"],
-    logo: "logos/kaust.png",
+    logo: "/logos/kaust.png",
   },
   {
     year: "2025",
