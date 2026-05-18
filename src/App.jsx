@@ -663,10 +663,10 @@ function Skills() {
                   <span key={skill} className="rounded-full bg-white px-3 py-1 text-sm font-medium text-[#6A4653] ring-1 ring-pink-100">{skill}</span>
                 ))}
               </div>
-              <div className="mt-5 rounded-3xl bg-gradient-to-br from-pink-50 to-yellow-50 p-4">
+              {/* <div className="mt-5 rounded-3xl bg-gradient-to-br from-pink-50 to-yellow-50 p-4">
                 <p className="text-xs font-black uppercase tracking-widest text-pink-500">Possible evidence</p>
                 <p className="mt-2 text-sm leading-6 text-[#6A4653]/80">{group.evidence}</p>
-              </div>
+              </div> */}
             </motion.article>
           );
         })}
