@@ -10,19 +10,19 @@ import {
   Cpu,
   Monitor,
   HeartHandshake,
-  Mail,
-  ExternalLink,
   Star,
   Wand2,
   CalendarDays,
   Target,
   FileText,
-  ChevronRight,
   Search,
   Filter,
   Moon,
   Sun,
 } from "lucide-react";
+import { Mail, ExternalLink, ChevronRight, Download, MapPin } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiGooglescholar } from "react-icons/si";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -37,35 +37,35 @@ const sections = [
 const journey = [
   {
     year: "2026",
-    title: "MenaML Winter School Participant at KAUST",
-    subtitle: "International machine learning school · Full Google scholarship",
+    title: "MenaML Winter School Participant",
+    subtitle: "King Abdullah University of Science and Technology (KAUST)",
     text: "Selected to participate in the MenaML Winter School at KAUST with a full scholarship from Google, strengthening my exposure to advanced machine learning research and international scientific communities.",
     tags: ["deep learning", "large language models", "scientific AI"],
-    logo: "/logos/kaust.png",
+    logo: "logos/kaust.png",
   },
   {
     year: "2025",
     title: "ARCHI Spring School Participant",
-    subtitle: "Embedded hardware/software system architectures",
+    subtitle: "Laboratoire d'informatique, de robotique et de microélectronique de Montpellier (LIRMM",
     text: "Attended the ARCHI Spring School to deepen my understanding of embedded architectures and hardware/software systems, directly supporting my PhD work on efficient AI deployment.",
     tags: ["embedded systems", "hardware architectures", "accelerator design"],
-    logo: "/logos/lirmm.jpeg",
+    logo: "logos/lirmm.jpeg",
   },
   {
-    year: "2024 — Present",
+    year: "2025 — Present",
     title: "PhD in Computer Science",
-    subtitle: "UPHF / INSA Hauts-de-France / LAMIH / NYU Abu Dhabi",
+    subtitle: "INSA Hauts-de-France &  NYU Abu Dhabi",
     text: "Started my PhD on software/hardware co-optimization through code transformation and hardware-aware Neural Architecture Search, with the goal of making AI model deployment more efficient on edge devices.",
     tags: ["edge AI", "hardware-aware NAS", "co-optimization"],
-    logo: "/logos/insa.png",
+    logo: "logos/insa.png",
   },
   {
     year: "2024",
-    title: "Guest lecturer at Batam State Polytechnic",
-    subtitle: "Data Mining course",
+    title: "Guest lecturer",
+    subtitle: "Batam State Polytechnic",
     text: "Delivered an online lecture for students in Indonesia, guiding them on how to approach AI research projects for their final-year work.",
     tags: ["teaching", "mentorship", "data mining"],
-    logo: "/logos/batam.png",
+    logo: "logos/batam.png",
   },
   // {
   //   year: "2025",
@@ -80,15 +80,23 @@ const journey = [
     subtitle: "AAAI, IJCNN, DAC, NeurIPS and DATE",
     text: "Contributed to the scientific community by reviewing submissions for major international conferences, developing a sharper understanding of research quality, clarity, evaluation and positioning.",
     tags: ["peer review"],
-    logo: "/logos/kaust.png",
+    logo: "logos/peerreview.png",
+  },
+    {
+    year: "2023 — 2024",
+    title: "Compiler Engineering internship",
+    subtitle: "Modern Compilers Lab · New York University Abu Dhabi (NYUAD)",
+    text: "Worked on an autoscheduling module for the MLIR compiler infrastructure, and contributed to the optimization of Matlab function kernels as part of a collaboration with Mathworks.",
+    tags: ["MLIR", "LLVM", "Reinforcement Learning"],
+    logo: "logos/NYUAD.png", 
   },
   {
     year: "2023 — 2024",
-    title: "Research internship at NYUAD & LAMIH",
-    subtitle: "Neural Architecture Search + Compiler Optimization",
+    title: "Research internship",
+    subtitle: "Laboratoire d'Automatique, de Mécanique et d'Informatique Industrielle et Humaine (LAMIH)",
     text: "Reviewed literature on the combination of NAS and compiler optimization, then designed and implemented CONAS, a hardware-aware NAS framework integrating automatic code optimization through MLIR.",
-    tags: ["NAS", "MLIR", "LLVM", "compiler optimization"],
-    logo: "/logos/NYUAD.png", 
+    tags: ["NAS", "MLIR", "compiler optimization"],
+    logo: "logos/LAMIH.png", 
   },
   // {
   //   year: "2023 — 2024",
@@ -101,26 +109,26 @@ const journey = [
   {
     year: "2023 — 2024",
     title: "Notion Campus Leader",
-    subtitle: "Academic community building and student support",
+    subtitle: "Ecole Supérieure d'Informatique (ESI)",
     text: "Represented Notion at my university by organizing workshops and tutoring sessions, creating learning resources and supporting students in their academic organization.",
     tags: ["leadership", "tutoring", "communication"],
-    logo: "/logos/notion.png",
+    logo: "logos/notion.png",
   },
   {
     year: "2023 — 2024",
-    title: "AI instructor at School of AI Algiers",
-    subtitle: "School of AI Algiers · AI Camp",
+    title: "AI instructor",
+    subtitle: "School of AI Algiers",
     text: "Prepared learning materials and assignments, and presented workshops on Maths for AI, image classification and transfer learning.",
     tags: ["teaching", "mentorship", "AI", "math"],
-    logo: "/logos/soai.png",
+    logo: "logos/soai.png",
   },
   {
     year: "2023",
     title: "Research Summer Camp Participant",
-    subtitle: " · School of AI Algiers",
+    subtitle: "School of AI Algiers",
     text: "Worked on analyzing and benchmarking mathematical methods to explain deep learning models for breast cancer detection, and presented the work as a research poster at AI Summit.",
     tags: ["XAI", "medical imaging", "deep learning", "scientific communication"],
-    logo: "/logos/soai.png",
+    logo: "logos/soai.png",
   },
   {
     year: "2023",
@@ -128,55 +136,55 @@ const journey = [
     subtitle: "IBM NSSS 2023",
     text: "Attended talks, panels and tutorials on theory and applications of neuro-symbolic AI, expanding my view of AI beyond purely data-driven approaches.",
     tags: ["neuro-symbolic AI"],
-    logo: "/logos/ibm.png",
+    logo: "logos/ibm.png",
   },
   {
     year: "2023",
-    title: "Research intern at LMCS lab, ESI",
-    subtitle: "Research projectS · ESI",
+    title: "Combinatorial Optimization intern",
+    subtitle: "Laboratoire de Méthodes de Conception de Systèmes (LMCS)",
     text: "Worked on improving a metaheuristic using machine learning techniques to solve the Flowshop scheduling problem.",
     tags: ["optimization", "metaheuristics", "reinforcement learning", "scheduling"],
-    logo: "/logos/lmcs.png",
+    logo: "logos/lmcs.jpeg",
   },
   {
     year: "2023",
     title: "IWD Hackathon Participant",
-    subtitle: "Women Techmakers Algiers · BeeFriendly app",
+    subtitle: "Women Techmakers Algiers",
     text: "Participated in the IWD’23 Hackathon by contributing to a computer vision model for classifying beehives based on their health status.",
     tags: ["hackathon", "computer vision", "teamwork", "AI for good"],
-    logo: "/logos/wtm.png",
+    logo: "logos/wtm.png",
   },
   {
     year: "2022",
-    title: "Process Mining Intern at CDTA",
-    subtitle: "CDTA · Centre de Développement des Technologies Avancées",
+    title: "Process Mining Intern",
+    subtitle: "Centre de Développement des Technologies Avancées (CDTA)",
     text: "Designed and implemented a ProM extension to analyze interoperability issues between processes, verify conformance between event logs and process models, and support model repair.",
     tags: ["process mining", "Java", "graphs", "software plugin"],
-    logo: "/logos/cdta.jpeg",
+    logo: "logos/cdta.jpeg",
   },
   {
     year: "2021 — 2024",
     title: "Engineering cycle in Intelligent Systems and Data",
-    subtitle: "ESI ex INI · Advanced AI, systems and optimization training",
+    subtitle: "Ecole Supérieure d'Informatique (ESI)",
     text: "Built strong foundations in machine learning, NLP, combinatorial optimization, computer architecture, HPC, distributed computing, data mining, signal/image processing and mathematics for data science.",
     tags: ["engineering", "AI", "HPC", "data science"],
-    logo: "/logos/esi.png",
+    logo: "logos/esi.png",
   },
   {
     year: "2021",
     title: "Entrance exam to the engineering cycle",
-    subtitle: "Transition into the engineering curriculum",
+    subtitle: "National competitive exam for engineering schools in Algeria",
     text: "Completed the competitive entrance step into the engineering cycle, marking the transition from preparatory training to advanced computer science and AI studies.",
     tags: ["engineering", "transition", "competitive exam"],
-    logo: "/logos/esi.png",
+    logo: "logos/esi.png",
   },
   {
     year: "2019 — 2021",
     title: "Classe préparatoire",
-    subtitle: "Early programming, design and problem-solving foundations",
+    subtitle: "Ecole Supérieure d'Informatique (ESI)",
     text: "Developed early technical and creative skills including C/C++, Java, Shell/Bash, Figma and Adobe After Effects, while strengthening mathematical and problem-solving habits.",
     tags: ["C/C++", "Java", "Shell", "Figma", "Adobe After Effects"],
-    logo: "/logos/esi.png",
+    logo: "logos/esi.png",
   },
   // {
   //   year: "2016 — 2019",
@@ -713,30 +721,86 @@ function Evidence() {
 
 
 function Project() {
+  const steps = [
+    {
+      emoji: "🎓",
+      title: "Complete my PhD",
+      text: "Build strong scientific foundations and produce meaningful research in efficient AI, compilation, and hardware-aware optimization.",
+    },
+    {
+      emoji: "🌍",
+      title: "Pursue a postdoc",
+      text: "Deepen my expertise, gain scientific independence, and grow through an international academic research environment.",
+    },
+    {
+      emoji: "📚",
+      title: "Become a teacher & academic researcher",
+      text: "Teach, supervise students, share knowledge, and contribute to science through research and mentoring.",
+    },
+    {
+      emoji: "🧁",
+      title: "Long-term personal dream",
+      text: "After fulfilling my academic mission, open a small cozy bakery as a softer creative project rooted in care and sharing.",
+    },
+  ];
+
   return (
-    <section id="project" className="relative z-10 bg-gradient-to-br from-pink-100/70 via-white/45 to-yellow-100/60 px-4 py-20 md:px-8">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-2 text-sm font-bold text-pink-700 shadow-sm">
+    <section
+      id="project"
+      className="relative z-10 bg-gradient-to-br from-pink-50/80 via-yellow-50/70 to-purple-50/70 px-4 py-24 md:px-8"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-pink-100 bg-white/75 px-4 py-2 text-sm font-bold text-pink-700 shadow-sm">
             <Target className="h-4 w-4" /> professional project
           </div>
-          <h2 className="font-serif text-4xl font-black text-[#3F3340] md:text-5xl">The trajectory I am building</h2>
+
+          <h2 className="font-serif text-4xl font-black leading-tight text-[#3F3340] md:text-5xl">
+            The trajectory I am building
+          </h2>
+
           <p className="mt-5 leading-8 text-[#6A4653]/85">
-            My goal is to build an identifiable research profile around automatic optimization for efficient AI: Neural Architecture Search, compilation, software/hardware co-optimization and deployment on resource-constrained devices.
+            My professional project is first rooted in academia. After my PhD, I would like to pursue a postdoctoral position, strengthen my scientific independence, and continue contributing to research in efficient AI, compilation, and hardware-aware optimization.
           </p>
         </div>
-        <div className="rounded-[2.5rem] border border-pink-100 bg-white/80 p-6 shadow-xl shadow-pink-100/80">
-          {[
-            "Complete a strong and valuable PhD thesis",
-            "Publish in high-quality conferences and journals",
-            "Develop expertise in AI + compilation + hardware",
-            "Build a visible, creative and scientifically rigorous profile",
-          ].map((step, index) => (
-            <div key={step} className="flex gap-4 border-b border-pink-100 py-4 last:border-b-0">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-pink-100 font-bold text-pink-700">{index + 1}</span>
-              <p className="pt-1 font-medium leading-7 text-[#6A4653]">{step}</p>
-            </div>
+
+        <div className="grid gap-6 md:grid-cols-4">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.07 }}
+              whileHover={{ y: -6, rotate: index % 2 ? 0.6 : -0.6 }}
+              className="relative rounded-[2.2rem] border border-pink-100 bg-white/80 p-6 text-center shadow-xl shadow-pink-100/70 backdrop-blur"
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-pink-500 px-3 py-1 text-xs font-bold text-white shadow-md">
+                step {index + 1}
+              </div>
+
+              <div className="mx-auto mt-4 grid h-16 w-16 place-items-center rounded-3xl bg-gradient-to-br from-pink-100 to-yellow-50 text-3xl shadow-sm">
+                {step.emoji}
+              </div>
+
+              <h3 className="mt-5 font-serif text-2xl font-bold text-[#3F3340]">
+                {step.title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-[#6A4653]/80">
+                {step.text}
+              </p>
+            </motion.div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-10 max-w-4xl rounded-[2.5rem] border border-pink-100 bg-white/70 p-7 text-center shadow-lg shadow-pink-100/70 backdrop-blur">
+          <p className="font-serif text-2xl text-pink-700">
+            “I want to contribute to science, transmit knowledge, and keep a little room for creation.”
+          </p>
+          <p className="mt-4 leading-8 text-[#6A4653]/80">
+            In the longer term, my ambition is to become a professor or academic researcher. Later in life, once I feel that I have accomplished this academic mission, I would love to explore a more personal dream: opening a small cozy bakery.
+          </p>
         </div>
       </div>
     </section>
@@ -744,44 +808,142 @@ function Project() {
 }
 
 function Contact() {
+  const contacts = [
+    // {
+    //   label: "Email UPHF",
+    //   value: "inas.bachiri@uphf.fr",
+    //   href: "mailto:inas.bachiri@uphf.fr",
+    //   icon: <Mail className="h-5 w-5 text-pink-600" />,
+    // },
+    {
+      label: "Email",
+      value: "inas.bachiri@nyu.edu",
+      href: "mailto:inas.bachiri@nyu.edu",
+      icon: <Mail className="h-5 w-5 text-pink-600" />,
+    },
+    {
+      label: "GitHub",
+      value: "nousssss",
+      href: "https://github.com/nousssss",
+      icon: <FaGithub className="h-5 w-5 text-[#3F3340]" />,
+    },
+    {
+      label: "LinkedIn",
+      value: "Inas Bachiri",
+      href: "PUT_YOUR_LINKEDIN_LINK_HERE",
+      icon: <FaLinkedin className="h-5 w-5 text-[#0A66C2]" />,
+    },
+    {
+      label: "Google Scholar",
+      value: "Inas Bachiri",
+      href: "PUT_YOUR_GOOGLE_SCHOLAR_LINK_HERE",
+      icon: <BookOpen className="h-5 w-5 text-[#4285F4]" />,
+    },
+  ];
+
   return (
     <section id="contact" className="relative z-10 px-4 py-20 md:px-8">
-      <div className="mx-auto max-w-5xl overflow-hidden rounded-[3rem] border border-pink-100 bg-white/80 shadow-2xl shadow-pink-100/80 backdrop-blur">
-        <div className="grid gap-0 md:grid-cols-[1fr_0.9fr]">
-          <div className="p-8 md:p-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-pink-50 px-4 py-2 text-sm font-bold text-pink-700">
-              <Mail className="h-4 w-4" /> contact
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-[3rem] border border-pink-100 bg-white/80 shadow-2xl shadow-pink-100/80 backdrop-blur">
+        <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
+          
+          {/* LEFT SIDE — cute contact intro */}
+          <div className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-purple-100 to-yellow-50 p-8 md:p-10">
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/40 blur-2xl" />
+            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-pink-200/40 blur-2xl" />
+
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-2 text-sm font-bold text-pink-700 shadow-sm">
+                <Mail className="h-4 w-4" /> contact
+              </div>
+
+              <h2 className="mt-6 font-serif text-5xl font-black leading-tight text-[#3F3340]">
+                Let’s connect
+              </h2>
+
+              <p className="mt-5 max-w-md leading-8 text-[#6A4653]/85">
+                Here you find all links and resources to:
+              </p>
+
+              <div className="mt-8 grid gap-4">
+                {[
+                  ["💌", "Contact me", "For academic or professional exchanges."],
+                  ["🌸", "Find my work", "Explore my projects, papers and code."],
+                  ["☕", "Start a conversation", "Research ideas are always welcome."],
+                ].map(([emoji, title, text]) => (
+                  <div
+                    key={title}
+                    className="flex items-start gap-4 rounded-[1.5rem] border border-white/70 bg-white/65 p-4 shadow-sm backdrop-blur"
+                  >
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-pink-50 text-xl">
+                      {emoji}
+                    </span>
+                    <div>
+                      <p className="font-serif text-xl font-bold text-[#3F3340]">
+                        {title}
+                      </p>
+                      <p className="mt-1 text-sm leading-6 text-[#6A4653]/75">
+                        {text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* <div className="mt-8 rounded-[2rem] border border-pink-100 bg-white/60 p-5 text-center shadow-sm backdrop-blur">
+                <p className="font-serif text-2xl text-pink-700">
+                  “Putting the soft in software ♡”
+                </p>
+              </div> */}
             </div>
-            <h2 className="mt-5 font-serif text-4xl font-black text-[#3F3340]">Let’s connect</h2>
-            <p className="mt-4 leading-8 text-[#6A4653]/85">
-              You can contact me by email or through LinkedIn, and find my work on GitHu and Google Scholar.
+          </div>
+
+          {/* RIGHT SIDE — buttons only */}
+          <div className="bg-white/70 p-8 md:p-10">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-pink-500">
+              links & contact
             </p>
-            <div className="mt-8 grid gap-3">
-              {[
-                [Mail, "Email UPHF", "inas.bachiri@uphf.fr", "mailto:inas.bachiri@uphf.fr"],
-                [Mail, "Email NYU", "inas.bachiri@nyu.edu", "mailto:inas.bachiri@nyu.edu"],
-                [ExternalLink, "GitHub", "nousssss", "https://github.com/nousssss"],
-                [ExternalLink, "LinkedIn", "Inas Bachiri", "https://www.linkedin.com/in/ines-bachiri/"],
-                [ExternalLink, "Google Scholar", "Inas Bachiri", "https://scholar.google.com/citations?user=hrHlf7YAAAAJ&hl=en"],
-              ].map(([Icon, label, value, href]) => (
+
+            <div className="mt-8 grid gap-4">
+              {contacts.map((item) => (
                 <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noreferrer" : undefined}
-                  className="flex items-center justify-between rounded-2xl bg-pink-50/70 p-4 font-medium text-[#6A4653] transition hover:bg-pink-100"
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="group flex items-center justify-between rounded-[1.4rem] border border-pink-100 bg-gradient-to-r from-pink-50 to-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-100"
                 >
-                  <span className="flex items-center gap-3"><Icon className="h-5 w-5 text-pink-600" /> {label}: {value}</span>
-                  <ChevronRight className="h-4 w-4" />
+                  <span className="flex items-center gap-4">
+                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white shadow-sm">
+                      {item.icon}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold text-pink-600">
+                        {item.label}
+                      </span>
+                      <span className="block text-base font-medium text-[#6A4653]">
+                        {item.value}
+                      </span>
+                    </span>
+                  </span>
+
+                  <span className="flex items-center gap-2 text-pink-600 transition group-hover:translate-x-1">
+                    <ExternalLink className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" />
+                  </span>
                 </a>
               ))}
             </div>
-          </div>
-          <div className="grid place-items-center bg-gradient-to-br from-pink-200 via-purple-100 to-yellow-100 p-10 text-center">
-            <div className="rounded-[2.5rem] bg-white/65 p-8 shadow-lg">
-              <Flower2 className="mx-auto h-16 w-16 text-pink-600" />
-              <p className="mt-5 font-serif text-3xl font-bold text-[#3F3340]">Compedoc Portfolio 2026</p>
-              <p className="mt-3 text-[#6A4653]/80">Made with love and milk ♡</p>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <a
+                href="CV_Inas.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-pink-600 px-5 py-3 font-semibold text-white shadow-lg shadow-pink-200 transition hover:-translate-y-1 hover:bg-pink-700"
+              >
+                Download my CV
+              </a>
+
             </div>
           </div>
         </div>
@@ -807,6 +969,26 @@ export default function App() {
         <Project />
         <Contact />
       </div>
+
+      <footer className="relative z-10 px-4 pb-10 pt-2">
+        <div className="mx-auto max-w-5xl">
+          <div className="relative overflow-hidden rounded-[2rem] border border-pink-100 bg-white/60 px-6 py-5 text-center shadow-lg shadow-pink-100/70 backdrop-blur">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(249,201,217,0.35),transparent_30%),radial-gradient(circle_at_80%_50%,rgba(220,203,255,0.28),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(255,232,168,0.35),transparent_35%)]" />
+
+            <div className="relative flex flex-col items-center justify-center gap-3 md:flex-row md:gap-4">
+              <span className="rounded-full bg-pink-50 px-4 py-2 text-sm font-bold text-pink-700 ring-1 ring-pink-100">
+                Compedoc Portfolio 2026
+              </span>
+
+              <span className="hidden text-pink-300 md:inline">✦</span>
+
+              <span className="font-serif text-lg text-pink-700">
+                Made with love and so much milk ♡
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
