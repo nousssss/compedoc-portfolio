@@ -41,15 +41,15 @@ const journey = [
     year: "2026",
     title: "MenaML Winter School Participant",
     subtitle: "King Abdullah University of Science and Technology (KAUST)",
-    text: "Selected to participate in the MenaML Winter School at KAUST with a full scholarship from Google, strengthening my exposure to advanced machine learning research and international scientific communities.",
-    tags: ["deep learning", "large language models", "scientific AI"],
+    text: "Selected to participate in the MenaML Winter School at KAUST with a full scholarship from Google, strengthening my exposure to advanced machine learning research and international scientific communities. I also got to present my thesis research work in a poster session.",
+    tags: ["deep learning", "large language models", "scientific computing"],
     logo: asset("logos/kaust.png"),
   },
   {
     year: "2025",
     title: "ARCHI Spring School Participant",
     subtitle: "Laboratoire d'informatique, de robotique et de microélectronique de Montpellier (LIRMM",
-    text: "Attended the ARCHI Spring School to deepen my understanding of embedded architectures and hardware/software systems, directly supporting my PhD work on efficient AI deployment.",
+    text: "Attended the ARCHI Spring School to deepen my understanding of embedded architectures and hardware/software systems, directly supporting my PhD work on efficient AI deployment. I also got to present the progress status and objectives of my thesis work.",
     tags: ["embedded systems", "hardware architectures", "accelerator design"],
     logo: asset("logos/lirmm.jpeg"),
   },
@@ -65,7 +65,7 @@ const journey = [
     year: "2024",
     title: "Guest lecturer",
     subtitle: "Batam State Polytechnic",
-    text: "Delivered an online lecture for students in Indonesia, guiding them on how to approach AI research projects for their final-year work.",
+    text: "Delivered an online lecture about data mining for students in Indonesia, guiding them on how to approach AI research projects for their final-year work.",
     tags: ["teaching", "mentorship", "data mining"],
     logo: asset("logos/batam.png"),
   },
@@ -80,9 +80,9 @@ const journey = [
     year: "2023 - Present",
     title: "Reviewer for international AI and Systems venues",
     subtitle: "AAAI, IJCNN, DAC, NeurIPS and DATE",
-    text: "Contributed to the scientific community by reviewing submissions for major international conferences, developing a sharper understanding of research quality, clarity, evaluation and positioning.",
+    text: "Contributed to the scientific community by reviewing submissions for major international conferences, developing a clearer understanding of research quality, clarity, evaluation and positioning.",
     tags: ["peer review"],
-    logo: asset("logos/peerreview.png"),
+    logo: asset("logos/peer-review.png"),
   },
     {
     year: "2023 — 2024",
@@ -96,8 +96,8 @@ const journey = [
     year: "2023 — 2024",
     title: "Research internship",
     subtitle: "Laboratoire d'Automatique, de Mécanique et d'Informatique Industrielle et Humaine (LAMIH)",
-    text: "Reviewed literature on the combination of NAS and compiler optimization, then designed and implemented CONAS, a hardware-aware NAS framework integrating automatic code optimization through MLIR.",
-    tags: ["NAS", "MLIR", "compiler optimization"],
+    text: "Reviewed literature on the combination of NAS and compiler optimization, then designed and implemented a hardware-aware NAS framework integrating automatic code optimization through MLIR.",
+    tags: ["Neural Architecture Search", "Hardware-Awareness", "Compiler Optimization"],
     logo: asset("logos/LAMIH.png"), 
   },
   // {
@@ -120,7 +120,7 @@ const journey = [
     year: "2023 — 2024",
     title: "AI instructor",
     subtitle: "School of AI Algiers",
-    text: "Prepared learning materials and assignments, and presented workshops on Maths for AI, image classification and transfer learning.",
+    text: "Prepared learning materials and assignments, and presented workshops on Maths for AI, image classification and transfer learning for AI Camp students.",
     tags: ["teaching", "mentorship", "AI", "math"],
     logo: asset("logos/soai.png"),
   },
@@ -144,7 +144,7 @@ const journey = [
     year: "2023",
     title: "Combinatorial Optimization intern",
     subtitle: "Laboratoire de Méthodes de Conception de Systèmes (LMCS)",
-    text: "Worked on improving a metaheuristic using machine learning techniques to solve the Flowshop scheduling problem.",
+    text: "Worked on improving a metaheuristic using machine learning techniques to solve the Flowshop scheduling and Community detection problems.",
     tags: ["optimization", "metaheuristics", "reinforcement learning", "scheduling"],
     logo: asset("logos/lmcs.jpeg"),
   },
@@ -180,14 +180,23 @@ const journey = [
     tags: ["engineering", "transition", "competitive exam"],
     logo: asset("logos/esi.png"),
   },
+    {
+    year: "2020",
+    title: "Cybersecurity Awareness Presenter",
+    subtitle: "Breaking Science (Charity Science Exhibition)",
+    text: "Represented the Shellmates Club and demonstrated social engineering attacks and provided practical tips to help individuals protect themselves online.",
+    tags: ['cybersecurity', 'social engineering', 'communication', 'kali linux'],
+    logo: asset("logos/esi.png"),
+  },
   {
     year: "2019 — 2021",
     title: "Classe préparatoire",
     subtitle: "Ecole Supérieure d'Informatique (ESI)",
-    text: "Developed early technical and creative skills including C/C++, Java, Shell/Bash, Figma and Adobe After Effects, while strengthening mathematical and problem-solving habits.",
+    text: "Developed early technical and creative skills including C/C++, Java, Shell/Bash, Figma and Adobe After Effects, while strengthening mathematical knowledge and problem-solving.",
     tags: ["C/C++", "Java", "Shell", "Figma", "Adobe After Effects"],
     logo: asset("logos/esi.png"),
   },
+
   // {
   //   year: "2016 — 2019",
   //   title: "Scientific and creative foundations",
@@ -205,8 +214,8 @@ const skillGroups = [
     title: "Conducting research",
     cute: "research foundations",
     description:
-      "Building research questions, conducting scientific literature reviews, analyzing the state of the art, positioning a contribution and writing scientific work.",
-    skills: ["Literature review", "Research methodology", "State of the art", "Scientific writing"],
+      "Inspecting for gaps, formulating research questions, conducting scientific literature reviews, analyzing the state of the art, positioning a contribution and writing scientific work.",
+    skills: ["Literature review", "Research methodology", "Scientific writing"],
     evidence: "NACOS survey published in Journal of Systems Architecture, CONAS, optimization and XAI research projects.",
   },
   {
@@ -215,7 +224,7 @@ const skillGroups = [
     title: "Developing & experimenting",
     cute: "experimental workflow",
     description:
-      "Implementing prototypes, running experiments, structuring pipelines, using AI frameworks and analyzing results.",
+      "Implementing prototypes, running experiments, structuring pipelines, using AI frameworks, plotting and analyzing results.",
     skills: ["Python", "C/C++", "Java", "Julia", "Bash/Shell", "PyTorch", "TensorFlow/Keras", "JAX", "Matlab", "R"],
     evidence: "CONAS, Interoperability Solver, projets XAI, Flowshop scheduling, Community Detection.",
   },
@@ -225,7 +234,7 @@ const skillGroups = [
     title: "Understanding hardware & systems",
     cute: "hardware-aware thinking",
     description:
-      "Connecting software decisions to hardware constraints, understanding architectures, HPC and efficient AI deployment.",
+      "Mapping software kernels to hardware circuits, understanding architectures, designing accelerators for AI, working on HPC and efficient AI deployment.",
     skills: ["Computer Architecture", "HPC", "CUDA", "OpenMP", "MPI", "Pthreads", "HDL", "LLVM", "MLIR", "Edge AI"],
     evidence: "PhD work in software/hardware co-optimization, ARCHI Spring School, HPC and architecture coursework, efficient AI projects.",
   },
@@ -246,7 +255,7 @@ const skillGroups = [
     cute: "research communication",
     description:
       "Presenting work to different audiences, producing clear visual supports, explaining technical ideas and guiding students in research projects.",
-    skills: ["Poster", "Slides", "Science communication", "Guest lecture", "Workshops", "Scientific figures", "Figma", "Adobe After Effects"],
+    skills: ["Making posters & Presentations", "Science communication", "Lecturing", "Workshops", "Scientific figures", "Figma", "Adobe After Effects"],
     evidence: "Guest lecture at Batam State Polytechnic, AI Camp workshops, AI Summit poster, presentations, Figma visuals and research communication supports.",
   },
   {
@@ -256,7 +265,7 @@ const skillGroups = [
     cute: "scientific service",
     description:
       "Working in international collaborations, receiving and giving feedback, participating in peer review and contributing to academic communities.",
-    skills: ["Peer review", "Collaboration", "Feedback", "Scientific service", "International research context"],
+    skills: ["Peer review", "Collaboration", "Feedback"],
     evidence: "Reviews for AAAI, DAC, DATE, IJCNN, DSD, NeurIPS MINT workshop and NuClear @ AAAI.",
   },
   {
@@ -266,7 +275,7 @@ const skillGroups = [
     cute: "learning community",
     description:
       "Organizing workshops, mentoring students, preparing learning resources and representing an academic community.",
-    skills: ["Mentoring", "Workshop design", "Tutoring", "Resource creation", "Community building"],
+    skills: ["Mentoring", "Curriculum design", "Tutoring", "Resource creation", "Community building"],
     evidence: "Notion Campus Leader, School of AI workshops, cybersecurity awareness presentation, student support activities.",
   },
 ];
@@ -426,7 +435,7 @@ function Hero({ dark }) {
           Inas' Doctoral Portfolio
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6A4653]/85">
-          This portfolio is my deliverable for Compedoc 2026, a professional space to present my academic path, skills, and future professional project.
+          This portfolio is my deliverable for Compedoc 2026: a professional space to present my academic path, skills, and future professional project.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a href="#skills" className="rounded-full bg-pink-600 px-6 py-3 font-semibold text-white shadow-lg shadow-pink-200 transition hover:-translate-y-1 hover:bg-pink-700">
@@ -515,7 +524,10 @@ function About() {
           <div className="rounded-[2.5rem] border border-pink-100 bg-white/75 p-8 shadow-xl shadow-pink-100/80 backdrop-blur">
             <h3 className="font-serif text-3xl font-bold text-[#3F3340]">Hi, I’m Inas ✨</h3>
             <p className="mt-4 leading-8 text-[#6A4653]/85">
-              I am a second-year PhD student in computer science, enrolled in a joint program between New York University Abu Dhabi (NYUAD) and Université Polytechnique Hauts-de-France (UPHF), supported by a scholarship from INSA Hauts-de-France. I am currently carrying my research at the LAMIH lab in France.
+               I graduated from Ecole Nationale Supérieure d'Informatique (ESI, ex. INI) in 2024, where I earned a double diploma (Engineering and MSc.) in Intelligent Systems and Data.
+            </p>
+            <p className="mt-4 leading-8 text-[#6A4653]/85">
+              I am now a second-year PhD student in computer science, enrolled in a joint program between New York University Abu Dhabi (NYUAD) and Université Polytechnique Hauts-de-France (UPHF), supported by a scholarship from INSA Hauts-de-France. I am currently carrying my research at the LAMIH lab in France.
             </p>
             <p className="mt-4 leading-8 text-[#6A4653]/85">
               My research focuses on making AI more efficient and optimized for resource-constrained devices by exploring the intersection of Neural Architecture Search, Automatic Code Optimization, and hardware accelerator design. My fields of interest include deep learning, compilers, neurosymbolic AI, analog AI, and emerging hardware architectures.
