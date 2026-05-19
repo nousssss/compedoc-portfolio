@@ -346,8 +346,7 @@ function cn(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function SectionTitle({ eyebrow, title, children }) {
-  return (
+function SectionTitle({ eyebrow, title, children, dark = false }) {
     <div className="mx-auto mb-10 max-w-3xl text-center">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -363,13 +362,13 @@ function SectionTitle({ eyebrow, title, children }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.05 }}
-        className="font-serif text-4xl font-bold tracking-tight text-[#3F3340] md:text-5xl"
+        className={`font-serif text-4xl font-bold tracking-tight md:text-5xl ${dark ? "text-pink-50" : "text-[#3F3340]"}`}
       >
         {title}
       </motion.h2>
       {children && <p className="mt-4 text-base leading-7 text-[#6A4653]/80 md:text-lg">{children}</p>}
     </div>
-  );
+  // );
 }
 
 function FloatingDecor() {
@@ -434,7 +433,7 @@ function Hero({ dark }) {
         <h1 className={`font-serif text-5xl font-black leading-[0.95] tracking-tight md:text-7xl ${dark ? "text-white" : "text-[#3F3340]"}`}>
           Inas' Doctoral Portfolio
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6A4653]/85">
+        <p className={`mt-6 max-w-2xl text-lg leading-8 ${dark ? "text-pink-50/90" : "text-[#6A4653]/85"}`}>
           This portfolio is my deliverable for Compedoc 2026: a professional space to present my academic path, skills, and future professional project.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -758,6 +757,62 @@ function Project() {
     },
   ];
 
+  const developmentSkills = [
+  {
+    emoji: "🧠",
+    title: "Scientific independence",
+    goal: "Become more autonomous in defining research questions, designing experiments, and positioning my work.",
+    actions: ["Lead a research idea from problem definition to evaluation", "Discuss research directions more proactively with supervisors", "Write clearer hypotheses and experimental protocols"],
+    indicator: "A clearer thesis roadmap and more autonomous research decisions",
+  },
+  {
+    emoji: "✍️",
+    title: "Scientific writing & publication",
+    goal: "Improve the clarity, structure, and impact of my papers and research manuscripts.",
+    actions: ["Write regularly", "Analyze strong papers in my field", "Improve abstracts, figures, and positioning"],
+    indicator: "Submission of stronger papers to high-quality venues",
+  },
+  {
+    emoji: "🎤",
+    title: "Teaching & knowledge transmission",
+    goal: "Develop my ability to explain complex concepts clearly and support students.",
+    actions: ["Prepare teaching materials", "Give lectures or workshops", "Mentor students on research projects"],
+    indicator: "More teaching experience and positive student feedback",
+  },
+  {
+    emoji: "🌍",
+    title: "Scientific visibility & networking",
+    goal: "Become more visible in the research community and build collaborations.",
+    actions: ["Attend conferences and schools", "Present posters and talks", "Continue peer-reviewing and academic service"],
+    indicator: "More academic interactions, collaborations, and research visibility",
+  },
+  {
+    emoji: "🛠️",
+    title: "Technical expertise in efficient AI systems",
+    goal: "Deepen my expertise in NAS, compiler optimization, hardware-aware AI, and edge deployment.",
+    actions: ["Strengthen compiler and hardware knowledge", "Run reproducible experiments", "Explore embedded and accelerator-based deployment"],
+    indicator: "A stronger technical profile for postdoc and academic positions",
+  },
+  {
+  emoji: "🔎",
+  title: "Keeping up with emerging AI trends",
+  goal: "Develop a structured habit to stay up to date with new advances in AI specifically, and computer science in general. I find it very important to keep up with the fast evolving nature of the field.",
+  actions: [
+    "Follow major conferences, arXiv papers, lab updates, and technical newsletters",
+    "Build a regular reading routine and a personal knowledge base to organize insights",
+    "Summarize important ideas and evaluate which ones are relevant to my PhD and future research direction",
+  ],
+  indicator: "A sustainable reading and monitoring routine, supported by organized notes and a personal knowledge base",
+  },
+  { 
+    emoji: "🗂️",
+    title: "Project management & organization",
+    goal: "Structure my PhD work around clearer milestones, priorities, and deliverables.",
+    actions: ["Plan research tasks by month", "Track experiments and writing progress", "Prepare CSI and publication deadlines earlier"],
+    indicator: "More stable progress and better stress management",
+  },
+];
+
   return (
     <section
       id="project"
@@ -807,6 +862,74 @@ function Project() {
             </motion.div>
           ))}
         </div>
+
+        <div className="mx-auto mt-14 max-w-6xl">
+  <div className="mx-auto mb-8 max-w-3xl text-center">
+    <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-pink-100 bg-white/75 px-4 py-2 text-sm font-bold text-pink-700 shadow-sm">
+      <Sparkles className="h-4 w-4" /> action plan
+    </div>
+
+    <h3 className="font-serif text-3xl font-black text-[#3F3340] md:text-4xl">
+      Skills I want to develop
+    </h3>
+
+    <p className="mt-4 leading-7 text-[#6A4653]/80">
+      To support my academic career project, I identified several skills that I want to strengthen during the rest of my PhD and beyond.
+    </p>
+  </div>
+
+  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    {developmentSkills.map((skill, index) => (
+      <motion.div
+        key={skill.title}
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45, delay: index * 0.06 }}
+        whileHover={{ y: -5, rotate: index % 2 ? 0.4 : -0.4 }}
+        className="rounded-[2rem] border border-pink-100 bg-white/80 p-6 shadow-lg shadow-pink-100/70 backdrop-blur"
+      >
+        <div className="flex items-start justify-between gap-3">
+          <span className="grid h-13 w-13 place-items-center rounded-3xl bg-gradient-to-br from-pink-100 to-yellow-50 text-3xl shadow-sm">
+            {skill.emoji}
+          </span>
+
+          <span className="rounded-full bg-pink-50 px-3 py-1 text-xs font-bold text-pink-600">
+            skill {index + 1}
+          </span>
+        </div>
+
+        <h4 className="mt-5 font-serif text-2xl font-bold text-[#3F3340]">
+          {skill.title}
+        </h4>
+
+        <p className="mt-3 text-sm leading-7 text-[#6A4653]/80">
+          {skill.goal}
+        </p>
+
+        <div className="mt-5 rounded-3xl bg-pink-50/70 p-4">
+          <p className="text-xs font-black uppercase tracking-widest text-pink-500">
+            Actions
+          </p>
+          <ul className="mt-2 space-y-2 text-sm leading-6 text-[#6A4653]/80">
+            {skill.actions.map((action) => (
+              <li key={action}>♡ {action}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-4 rounded-3xl bg-yellow-50/80 p-4">
+          <p className="text-xs font-black uppercase tracking-widest text-yellow-600">
+            Success indicator
+          </p>
+          <p className="mt-2 text-sm leading-6 text-[#6A4653]/80">
+            {skill.indicator}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
 
         <div className="mx-auto mt-10 max-w-4xl rounded-[2.5rem] border border-pink-100 bg-white/70 p-7 text-center shadow-lg shadow-pink-100/70 backdrop-blur">
           <p className="font-serif text-2xl text-pink-700">
