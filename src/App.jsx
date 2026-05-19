@@ -346,7 +346,8 @@ function cn(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function SectionTitle({ eyebrow, title, children, dark = false }) {
+function SectionTitle({ eyebrow, title, children }) {
+  return (
     <div className="mx-auto mb-10 max-w-3xl text-center">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -362,13 +363,13 @@ function SectionTitle({ eyebrow, title, children, dark = false }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.05 }}
-        className={`font-serif text-4xl font-bold tracking-tight md:text-5xl ${dark ? "text-pink-50" : "text-[#3F3340]"}`}
+        className="font-serif text-4xl font-bold tracking-tight text-[#3F3340] md:text-5xl"
       >
         {title}
       </motion.h2>
       {children && <p className="mt-4 text-base leading-7 text-[#6A4653]/80 md:text-lg">{children}</p>}
     </div>
-  // );
+  );
 }
 
 function FloatingDecor() {
@@ -434,8 +435,8 @@ function Hero({ dark }) {
           Inas' Doctoral Portfolio
         </h1>
         <p className={`mt-6 max-w-2xl text-lg leading-8 ${dark ? "text-pink-50/90" : "text-[#6A4653]/85"}`}>
-          This portfolio is my deliverable for Compedoc 2026: a professional space to present my academic path, skills, and future professional project.
-        </p>
+        This portfolio is my deliverable for Compedoc 2026: a professional space to present my academic path, skills, and future professional project.
+      </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a href="#skills" className="rounded-full bg-pink-600 px-6 py-3 font-semibold text-white shadow-lg shadow-pink-200 transition hover:-translate-y-1 hover:bg-pink-700">
             Explore my skills
